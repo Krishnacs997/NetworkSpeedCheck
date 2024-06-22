@@ -117,21 +117,6 @@ class MainActivity : ComponentActivity() {
         }.withData(this.intent?.data).init()
     }
 
-    override fun onNewIntent(intent: Intent) {
-        super.onNewIntent(intent)
-
-
-        fun sdhf() {
-            CoroutineScope(Dispatchers.Main).launch {
-                val speed = measureCurrentInternetSpeed()
-                speer =
-                    "Download speed: ${speed.downloadSpeed.toInt()} Kbps\nUpload speed: ${speed.uploadSpeed.toInt()} Kbps"
-                Log.d("Speed measure", speer)
-
-                binding.tvSpeed.text = speer
-            }
-        }
-
         /* private fun checkNetworkConnection(): Boolean{
 
         val connectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
